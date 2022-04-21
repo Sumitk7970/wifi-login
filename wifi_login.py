@@ -1,3 +1,4 @@
+import sys
 from time import sleep
 from selenium import webdriver
 
@@ -24,5 +25,8 @@ try:
     driver.get(URL)
     sleep(2) # wait for the page to load
     login(USERNAME, PASSWORD)
+except:
+    driver.quit()
+    sys.exit(1)
 finally:
     driver.quit()
